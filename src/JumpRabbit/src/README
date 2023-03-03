@@ -1,0 +1,39 @@
+//이 프로젝트를 정상적으로 실행시키기 위해서는
+1. JumpRabbit/font에 있는 neodgm.ttf를
+		윈도우의 [설정] - [개인 설정] - [글꼴]에 들어가서 추가시켜주세요.
+
+
+2. 아래의 DB 테이블을 추가해 자신의 port 번호, Mysql 유저 이름, DB 이름, DB 비밀번호를 코드 내에 있는 Connection 객체 변수의 값에 반영해주세요.
+	(panels 패키지의 GClearPanel.java, GOverPanel.java, JoinNamePanel.java, JoinPanel.java, LoginPanel.java, RankPanel.java)
+
+// DB 관련한 내용
+port: 3306
+user: jumprabbit
+db: jumprabbit
+pw: jumprabbit
+
+CREATE TABLE `user_information` (
+  `id` varchar(20) NOT NULL,
+  `pw` varchar(20) DEFAULT NULL,
+  `name` varchar(16) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `user_score` (
+  `name` varchar(16) NOT NULL,
+  `score` int DEFAULT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+3. 만약 getter 메서드 때문에 오류가 난다면 lombok 라이브러리를 설치해줘야합니다.
+	설치하는 방법 블로그 참조: https://tina0430.tistory.com/66
+	
+	
+	
+4. JavaSE 17 버전입니다. java 버전이 다르면 오류가 날 수 있기에 버전을 맞춰주세요.
+
+
+
+5. 다른 오류가 발생하여 프로그램이 정상적으로 실행되지 않는다면 s2104@e-mirim.hs.kr로 알려주시기 바랍니다.
